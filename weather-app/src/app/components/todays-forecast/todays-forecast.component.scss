@@ -9,9 +9,11 @@
   height: 100%;
   border-radius: 10px 0 0 10px;
 
+  li {
+    list-style: none;
+  }
+
   img {
     height: 4rem;
   }
 }
-
-
