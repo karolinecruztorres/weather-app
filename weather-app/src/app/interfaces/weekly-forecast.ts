@@ -1,16 +1,20 @@
 export interface WeeklyForecast {
+  timelines: {
+    daily: [
+      {
+        time: string;
+        values: {
+          temperatureAvg: number;
+          temperatureMax: number;
+          temperatureMin: number;
+          weatherCodeMax: number;
+          weatherCodeMin: number;
+        };
+      }
+    ];
+  };
   location: {
     lat: number;
     lon: number;
-  };
-  timelines: {
-    hourly: Array<{
-      time: string;
-      values: {
-        icon: number;
-        temperature: number;
-        //search for min and max temperature
-      };
-    }>;
   };
 }
