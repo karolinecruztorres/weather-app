@@ -1,0 +1,15 @@
+<main class="card-content">
+  @if(forecastData$! | async; as resultObject) {
+  <section class="app-todays-forecast">
+    @for(item of [resultObject.data]; track item.values) {
+    <article>
+      <app-todays-forecast [TodaysData]="{ data: item, location: resultObject.location }" />
+    </article>
+    }
+  </section>
+  }
+
+  <app-weekly-forecast></app-weekly-forecast>
+  <app-forecast-highlights></app-forecast-highlights>
+</main>
+

@@ -1,11 +1,11 @@
-<section class="app-todays-forecast">
-  <p>Porto</p>
-  <li>Saturday, 15:18</li>
-  <li>
+<ul >
+  <!-- <li>{{ TodaysData.location.name }}</li> -->
+  <!-- <li>Monday, 15:00</li> -->
+  <!-- <li>
     <img src="../../assets/images/cloud-icon.png" alt="weather icon" />
-  </li>
-  <li>16° C</li>
-  <li>Feels like 3°</li>
-  <li>Mostly Cloudy</li>
-  <li>Rain - 30%</li>
-</section>
+  </li> -->
+  <li>{{ TodaysData.data.values.temperature }}°</li>
+  <li>Feels like {{ TodaysData.data.values.temperatureApparent }}°</li>
+  <!-- <li>Mostly Cloudy</li> -->
+  <li>Rain - {{ TodaysData.data.values.precipitationProbability }} %</li>
+</ul>
