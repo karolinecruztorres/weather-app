@@ -41,5 +41,5 @@ testem.log
 .DS_Store
 Thumbs.db
 
-#Api url and key
-api/
+#Api
+environments/

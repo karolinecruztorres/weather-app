@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TodaysForecast } from '../interfaces/todays-forecast';
-import { api } from '../api/api';
+import { TodaysForecast } from '../../interfaces/todays-forecast';
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,7 @@ export class ForecastService {
 
   getForecastData(): Observable<TodaysForecast> {
     return this.http.get<TodaysForecast>(
-      `${api.apiUrl}/weather/realtime?location=${api.timezone}&units=${api.units}&apikey=${api.apiKey}`
+      `${environment.apiUrl}/weather/realtime?location=${environment.timezone}&units=${environment.units}&apikey=${environment.apiKey}`
     );
   }
 }
