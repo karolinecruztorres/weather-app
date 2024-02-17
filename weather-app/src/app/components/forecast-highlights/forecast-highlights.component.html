@@ -1,8 +1,13 @@
-<article class="app-forecast-highlights">
-  <p>UV Index</p>
-  <p>Wind</p>
-  <p>Humidity</p>
-  <p>Visibility</p>
-  <p>Air Quality</p>
-  <p>Sunset & Sunrise</p>
-</article>
+<ul class="app-forecast-highlights">
+  <li>Uv Index: {{ highlightsRealTimeData.data.values.uvIndex }}</li>
+  <li>{{ highlightsRealTimeData.data.values.uvHealthConcern }}</li>
+  <li>Wind Speed: {{ highlightsRealTimeData.data.values.windSpeed }}</li>
+  <li>{{ highlightsRealTimeData.data.values.windDirection }}</li>
+  <li>Humidity: {{ highlightsRealTimeData.data.values.humidity }}</li>
+  <li>Visibility: {{ highlightsRealTimeData.data.values.visibility }}</li>
+
+  <li>
+    Sunset: {{ highlightsData.timelines.daily[0].values.sunriseTime }} &
+    Sunrise: {{ highlightsData.timelines.daily[0].values.sunsetTime }}
+  </li>
+</ul>

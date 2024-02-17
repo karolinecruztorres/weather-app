@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { WeeklyForecast } from '../../interfaces/weekly-forecast';
 
 @Component({
   selector: 'app-weekly-forecast',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './weekly-forecast.component.scss'
 })
 export class WeeklyForecastComponent {
-
+  @Input() weeklyData!: WeeklyForecast;
 }
