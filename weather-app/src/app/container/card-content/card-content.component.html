@@ -5,52 +5,55 @@
 } @else {
 
 <main class="card-content">
-  @if(todaysForecast$! | async; as resultObject) {
+  @if(todaysForecast$! | async; as todaysResult) {
 
   <section>
-    @for(item of [ resultObject.data]; track item.values) {
+    @for(item of [ todaysResult.data]; track item.values) {
     <article>
       <app-todays-forecast
-        [todaysData]="{ data: item, location: resultObject.location }"
+        [todaysData]="{ data: item, location: todaysResult.location }"
       />
     </article>
     }
   </section>
 
-  } @if(highlightsRealTime$! | async; as resultObject) {
+  } @if(highlightsRealTime$! | async; as highlightsRealTimeResult) {
 
   <section>
-    @for(item of [resultObject.data]; track item.values) {
+    @for(item of [highlightsRealTimeResult.data]; track item.values) {
     <article>
       <app-realtime-highlights
         [highlightsRealTimeData]="{
           data: item,
-          location: resultObject.location
+          location: highlightsRealTimeResult.location
         }"
       />
     </article>
     }
   </section>
 
-  } @if(highlights$! | async; as resultObject) {
+  } @if(highlights$! | async; as highlightsResult) {
 
   <section>
-    @for(item of [resultObject.timelines]; track item.daily) {
+    @for(item of [highlightsResult.timelines]; track item.daily) {
     <article>
       <app-forecast-highlights
-        [highlightsData]="{ timelines: item, location: resultObject.location }"
+        [highlightsData]="{
+          timelines: item,
+          location: highlightsResult.location
+        }"
       />
     </article>
     }
   </section>
 
-  } @if(weeklyForecast$! | async; as resultObject) {
+  } @if(weeklyForecast$! | async; as weeklyResult) {
 
   <section>
-    @for(item of [resultObject.timelines]; track item.daily) {
+    @for(item of [weeklyResult.timelines]; track item.daily) {
     <article>
       <app-weekly-forecast
-        [weeklyData]="{ timelines: item, location: resultObject.location }"
+        [weeklyData]="{ timelines: item, location: weeklyResult.location }"
       />
     </article>
     }
