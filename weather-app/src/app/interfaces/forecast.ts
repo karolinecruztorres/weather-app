@@ -1,4 +1,4 @@
-export interface WeeklyForecast {
+export interface Forecast {
   timelines: {
     daily: [
       {
@@ -9,6 +9,13 @@ export interface WeeklyForecast {
           temperatureMin: number;
           weatherCodeMax: number;
           weatherCodeMin: number;
+          rainAccumulationSum: number;
+          sleetAccumulationLweSum: number;
+          snowAccumulationSum: number;
+          moonriseTime: string;
+          moonsetTime: string;
+          sunriseTime: string;
+          sunsetTime: string;
         };
       }
     ];
