@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { EMPTY, Observable, catchError } from 'rxjs';
 import { ForecastService } from '../../core/services/forecast.service';
+import { MockService } from '../../core/services/mock.service';
 import { Realtime } from '../../interfaces/realtime';
 import { Forecast } from '../../interfaces/forecast';
+import { environment } from '../../../environments/environment.development';
 
 import { TodaysForecastComponent } from '../../components/todays-forecast/todays-forecast.component';
 import { ForecastHighlightsComponent } from '../../components/forecast-highlights/forecast-highlights.component';
@@ -32,35 +34,51 @@ export class CardContentComponent implements OnInit {
   public highlights$!: Observable<Forecast>;
   public weeklyForecast$!: Observable<Forecast>;
   public errorMessage!: string;
-  constructor(private service: ForecastService) {}
+
+  constructor(
+    private forecastService: ForecastService,
+    private mockService: MockService
+  ) {}
 
   ngOnInit(): void {
-    this.todaysForecast$ = this.service.getRealtimeData().pipe(
-      catchError((error: string) => {
-        this.errorMessage = error;
-        return EMPTY;
-      })
-    );
+    this.todaysForecast$ = this.getService()
+      .getRealtimeData()
+      .pipe(
+        catchError((error: string) => {
+          this.errorMessage = error;
+          return EMPTY;
+        })
+      );
 
-    this.highlightsRealTime$ = this.service.getRealtimeData().pipe(
-      catchError((error: string) => {
-        this.errorMessage = error;
-        return EMPTY;
-      })
-    );
+    this.highlightsRealTime$ = this.getService()
+      .getRealtimeData()
+      .pipe(
+        catchError((error: string) => {
+          this.errorMessage = error;
+          return EMPTY;
+        })
+      );
 
-    this.highlights$ = this.service.getForecastData().pipe(
-      catchError((error: string) => {
-        this.errorMessage = error;
-        return EMPTY;
-      })
-    );
+    this.highlights$ = this.getService()
+      .getForecastData()
+      .pipe(
+        catchError((error: string) => {
+          this.errorMessage = error;
+          return EMPTY;
+        })
+      );
 
-    this.weeklyForecast$ = this.service.getForecastData().pipe(
-      catchError((error: string) => {
-        this.errorMessage = error;
-        return EMPTY;
-      })
-    );
+    this.weeklyForecast$ = this.getService()
+      .getForecastData()
+      .pipe(
+        catchError((error: string) => {
+          this.errorMessage = error;
+          return EMPTY;
+        })
+      );
+  }
+
+  private getService(): ForecastService | MockService {
+    return environment.apiOn ? this.forecastService : this.mockService;
   }
 }
