@@ -8,8 +8,7 @@
   @if(todaysForecast$! | async; as resultObject) {
 
   <section>
-    @for(item of [
-    resultObject.data]; track item.values) {
+    @for(item of [ resultObject.data]; track item.values) {
     <article>
       <app-todays-forecast
         [todaysData]="{ data: item, location: resultObject.location }"
@@ -23,7 +22,7 @@
   <section>
     @for(item of [resultObject.data]; track item.values) {
     <article>
-      <app-forecast-highlights
+      <app-realtime-highlights
         [highlightsRealTimeData]="{
           data: item,
           location: resultObject.location

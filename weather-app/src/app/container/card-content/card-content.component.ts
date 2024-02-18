@@ -9,6 +9,7 @@ import { TodaysForecastComponent } from '../../components/todays-forecast/todays
 import { ForecastHighlightsComponent } from '../../components/forecast-highlights/forecast-highlights.component';
 import { WeeklyForecastComponent } from '../../components/weekly-forecast/weekly-forecast.component';
 import { ErrorMessageComponent } from '../../components/error-message/error-message.component';
+import { RealtimeHighlightsComponent } from '../../components/realtime-highlights/realtime-highlights.component';
 
 @Component({
   selector: 'card-content',
@@ -17,6 +18,7 @@ import { ErrorMessageComponent } from '../../components/error-message/error-mess
     AsyncPipe,
     TodaysForecastComponent,
     ForecastHighlightsComponent,
+    RealtimeHighlightsComponent,
     WeeklyForecastComponent,
     ErrorMessageComponent,
   ],

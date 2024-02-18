@@ -4,7 +4,6 @@ export interface Forecast {
       {
         time: string;
         values: {
-          temperatureAvg: number;
           temperatureMax: number;
           temperatureMin: number;
           weatherCodeMax: number;
@@ -12,8 +11,6 @@ export interface Forecast {
           rainAccumulationSum: number;
           sleetAccumulationLweSum: number;
           snowAccumulationSum: number;
-          moonriseTime: string;
-          moonsetTime: string;
           sunriseTime: string;
           sunsetTime: string;
         };

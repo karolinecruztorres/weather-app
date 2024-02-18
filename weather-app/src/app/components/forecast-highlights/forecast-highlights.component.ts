@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Realtime } from '../../interfaces/realtime';
 import { Forecast } from '../../interfaces/forecast';
 
 @Component({
@@ -10,6 +9,5 @@ import { Forecast } from '../../interfaces/forecast';
   styleUrl: './forecast-highlights.component.scss',
 })
 export class ForecastHighlightsComponent {
-  @Input() highlightsRealTimeData!: Realtime;
   @Input() highlightsData!: Forecast;
 }
