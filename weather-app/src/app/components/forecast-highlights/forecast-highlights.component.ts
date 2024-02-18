@@ -1,8 +1,6 @@
 import { Component, Input } from '@angular/core';
-import {
-  ForecastHighlightsRealTime,
-  ForecastHighlights,
-} from '../../interfaces/forecast-highlights';
+import { Realtime } from '../../interfaces/realtime';
+import { Forecast } from '../../interfaces/forecast';
 
 @Component({
   selector: 'app-forecast-highlights',
@@ -12,6 +10,6 @@ import {
   styleUrl: './forecast-highlights.component.scss',
 })
 export class ForecastHighlightsComponent {
-  @Input() highlightsRealTimeData!: ForecastHighlightsRealTime;
-  @Input() highlightsData!: ForecastHighlights;
+  @Input() highlightsRealTimeData!: Realtime;
+  @Input() highlightsData!: Forecast;
 }

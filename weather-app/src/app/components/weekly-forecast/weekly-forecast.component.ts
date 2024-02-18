@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
-import { WeeklyForecast } from '../../interfaces/weekly-forecast';
+import { Forecast } from '../../interfaces/forecast';
 
 @Component({
   selector: 'app-weekly-forecast',
   standalone: true,
   imports: [],
   templateUrl: './weekly-forecast.component.html',
-  styleUrl: './weekly-forecast.component.scss'
+  styleUrl: './weekly-forecast.component.scss',
 })
 export class WeeklyForecastComponent {
-  @Input() weeklyData!: WeeklyForecast;
+  @Input() weeklyData!: Forecast;
 }

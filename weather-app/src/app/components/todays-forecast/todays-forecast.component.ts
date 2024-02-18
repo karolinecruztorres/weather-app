@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TodaysForecast } from '../../interfaces/todays-forecast';
+import { Realtime } from '../../interfaces/realtime';
 
 @Component({
   selector: 'app-todays-forecast',
@@ -9,5 +9,5 @@ import { TodaysForecast } from '../../interfaces/todays-forecast';
   styleUrl: './todays-forecast.component.scss',
 })
 export class TodaysForecastComponent {
-  @Input() todaysData!: TodaysForecast;
+  @Input() todaysData!: Realtime;
 }

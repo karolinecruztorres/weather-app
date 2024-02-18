@@ -5,10 +5,11 @@
 } @else {
 
 <main class="card-content">
-  @if(todaysForecastData$! | async; as resultObject) {
+  @if(todaysForecast$! | async; as resultObject) {
 
   <section>
-    @for(item of [resultObject.data]; track item.values) {
+    @for(item of [
+    resultObject.data]; track item.values) {
     <article>
       <app-todays-forecast
         [todaysData]="{ data: item, location: resultObject.location }"
@@ -17,7 +18,7 @@
     }
   </section>
 
-  } @if(highlightsRealTimeData$! | async; as resultObject) {
+  } @if(highlightsRealTime$! | async; as resultObject) {
 
   <section>
     @for(item of [resultObject.data]; track item.values) {
@@ -32,7 +33,7 @@
     }
   </section>
 
-  } @if(highlightsData$! | async; as resultObject) {
+  } @if(highlights$! | async; as resultObject) {
 
   <section>
     @for(item of [resultObject.timelines]; track item.daily) {
@@ -44,7 +45,7 @@
     }
   </section>
 
-  } @if(weeklyForecastData$! | async; as resultObject) {
+  } @if(weeklyForecast$! | async; as resultObject) {
 
   <section>
     @for(item of [resultObject.timelines]; track item.daily) {
