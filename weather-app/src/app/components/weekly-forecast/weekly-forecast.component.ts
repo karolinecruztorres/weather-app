@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Forecast } from '../../interfaces/forecast';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-weekly-forecast',
   standalone: true,
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './weekly-forecast.component.html',
   styleUrl: './weekly-forecast.component.scss',
 })
