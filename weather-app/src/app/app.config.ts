@@ -9,11 +9,12 @@ import {
   withInterceptors,
 } from '@angular/common/http';
 import { errorHandlerInterceptor } from './core/interceptors/error-handler.interceptor';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideClientHydration(),
-    provideHttpClient(withInterceptors([errorHandlerInterceptor]), withFetch()),
+    provideHttpClient(withInterceptors([errorHandlerInterceptor]), withFetch()), provideAnimationsAsync(),
   ],
 };
