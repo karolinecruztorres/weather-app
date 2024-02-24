@@ -1,12 +1,14 @@
 <ul class="app-weekly-forecast">
   <li>{{ weeklyData.timelines.daily[0].time }}</li>
   <img
-  ngSrc="../../../assets/images/tomorrow-weather-codes/weather-code-full-day/large/png/40000_drizzle_large.png"
-  width="30"
-  height="30"
-  alt="Weather Icon"
-  priority
-/>
+    ngSrc="../../../assets/images/tomorrow-weather-codes/weather-code/color/{{
+      weeklyData.timelines.daily[0].values.weatherCodeMin
+    }}.svg"
+    width="30"
+    height="30"
+    alt="Weather Icon"
+    priority
+  />
   <li>
     {{ weeklyData.timelines.daily[0].values.temperatureMax }} /
     {{ weeklyData.timelines.daily[0].values.temperatureMin }}
