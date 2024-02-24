@@ -11,7 +11,6 @@ export class MockService {
     console.log('MockService constructor called');
   }
 
-
   getRealtimeData(): Observable<Realtime> {
     const mockRealtimeData: Realtime = {
       data: {
